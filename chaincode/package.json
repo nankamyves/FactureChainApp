@@ -1,0 +1,21 @@
+{
+  "name": "facturechain-chaincode",
+  "version": "1.0.0",
+  "description": "Smart contract FactureChain — Hyperledger Fabric — ENEO Cameroun",
+  "main": "index.js",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "scripts": {
+    "start": "fabric-chaincode-node start"
+  },
+  "dependencies": {
+    "fabric-contract-api": "^2.4.0",
+    "fabric-shim": "^2.4.0"
+  },
+  "devDependencies": {
+    "jest": "^27.0.0"
+  },
+  "author": "FactureChain — ENEO Cameroun",
+  "license": "Apache-2.0"
+}

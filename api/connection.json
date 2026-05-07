@@ -1,0 +1,60 @@
+{
+  "name": "facturechain-network",
+  "version": "1.0.0",
+  "client": {
+    "organization": "EneoOrg",
+    "connection": {
+      "timeout": {
+        "peer": { "endorser": "300" },
+        "orderer": "300"
+      }
+    }
+  },
+  "organizations": {
+    "EneoOrg": {
+      "mspid": "EneoMSP",
+      "peers": ["peer0.eneo.com"],
+      "certificateAuthorities": ["ca.eneo.com"]
+    }
+  },
+  "orderers": {
+    "orderer.eneo.com": {
+      "url": "grpc://localhost:7050",
+      "grpcOptions": {
+        "ssl-target-name-override": "orderer.eneo.com",
+        "hostnameOverride": "orderer.eneo.com"
+      }
+    }
+  },
+  "peers": {
+    "peer0.eneo.com": {
+      "url": "grpc://localhost:7051",
+      "grpcOptions": {
+        "ssl-target-name-override": "peer0.eneo.com",
+        "hostnameOverride": "peer0.eneo.com"
+      }
+    }
+  },
+  "certificateAuthorities": {
+    "ca.eneo.com": {
+      "url": "http://localhost:7054",
+      "caName": "ca-eneo",
+      "httpOptions": {
+        "verify": false
+      }
+    }
+  },
+  "channels": {
+    "mychannel": {
+      "orderers": ["orderer.eneo.com"],
+      "peers": {
+        "peer0.eneo.com": {
+          "endorsingPeer": true,
+          "chaincodeQuery": true,
+          "ledgerQuery": true,
+          "eventSource": true
+        }
+      }
+    }
+  }
+}

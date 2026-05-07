@@ -1,0 +1,21 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# crypto-config.yaml — FactureChain / ENEO Cameroun
+# Génère les certificats MSP pour les peers et orderers
+# Commande : cryptogen generate --config=./crypto-config.yaml
+# ─────────────────────────────────────────────────────────────────────────────
+
+OrdererOrgs:
+  - Name: Orderer
+    Domain: eneo.com
+    EnableNodeOUs: true
+    Specs:
+      - Hostname: orderer
+
+PeerOrgs:
+  - Name: Eneo
+    Domain: eneo.com
+    EnableNodeOUs: true
+    Template:
+      Count: 1
+    Users:
+      Count: 1
