@@ -38,3 +38,5 @@ logging:
   level:
     root: INFO
     [com.facturechain]: DEBUG
+    [org.springframework.security]: DEBUG
+    [org.springframework.web]: DEBUG
